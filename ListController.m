@@ -193,6 +193,54 @@
     self.listData = nil;
 }
 
+- (NSDictionary *)_entryByReencodingNameInEntry:(NSDictionary *)entry encoding:(NSStringEncoding)newEncoding
+    // CFFTPCreateParsedResourceListing always interprets the file name as MacRoman, 
+    // which is clearly bogus <rdar://problem/7420589>.  This code attempts to fix 
+    // that by converting the Unicode name back to MacRoman (to get the original bytes; 
+    // this works because there's a lossless round trip between MacRoman and Unicode) 
+    // and then reconverting those bytes to Unicode using the encoding provided. 
+{
+    NSDictionary *  result;
+    NSString *      name;
+    NSData *        nameData;
+    NSString *      newName;
+    
+    newName = nil;
+    
+    // Try to get the name, convert it back to MacRoman, and then reconvert it 
+    // with the preferred encoding.
+    
+    name = [entry objectForKey:(id) kCFFTPResourceName];
+    if (name != nil) {
+        assert([name isKindOfClass:[NSString class]]);
+        
+        nameData = [name dataUsingEncoding:NSMacOSRomanStringEncoding];
+        if (nameData != nil) {
+            newName = [[[NSString alloc] initWithData:nameData encoding:newEncoding] autorelease];
+        }
+    }
+    
+    // If the above failed, just return the entry unmodified.  If it succeeded, 
+    // make a copy of the entry and replace the name with the new name that we 
+    // calculated.
+    
+    if (newName == nil) {
+        assert(NO);                 // in the debug builds, if this fails, we should investigate why
+        result = (NSDictionary *) entry;
+    } else {
+        NSMutableDictionary *   newEntry;
+        
+        newEntry = [[entry mutableCopy] autorelease];
+        assert(newEntry != nil);
+        
+        [newEntry setObject:newName forKey:(id) kCFFTPResourceName];
+        
+        result = newEntry;
+    }
+    
+    return result;
+}
+
 - (void)_parseListData
 {
     NSMutableArray *    newEntries;
@@ -224,7 +272,24 @@
             // important that we check for NULL.
 
             if (thisEntry != NULL) {
-                [newEntries addObject: (NSDictionary *) thisEntry];
+                NSDictionary *  entryToAdd;
+                
+                // Try to interpret the name as UTF-8, which makes things work properly 
+                // with many UNIX-like systems, including the Mac OS X built-in FTP 
+                // server.  If you have some idea what type of text your target system 
+                // is going to return, you could tweak this encoding.  For example, 
+                // if you know that the target system is running Windows, then 
+                // NSWindowsCP1252StringEncoding would be a good choice here.
+                // 
+                // Alternatively you could let the user choose the encoding up 
+                // front, or reencode the listing after they've seen it and decided 
+                // it's wrong.
+                //
+                // Ain't FTP a wonderful protocol!
+
+                entryToAdd = [self _entryByReencodingNameInEntry:(NSDictionary *) thisEntry encoding:NSUTF8StringEncoding];
+                
+                [newEntries addObject:entryToAdd];
             }
             
             // We consume the bytes regardless of whether we get an entry.
@@ -436,9 +501,7 @@ static NSDateFormatter *    sDateFormatter;
         }
         assert(cell != nil);
 
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        
-        listEntry = [self.listEntries objectAtIndex:indexPath.row];
+        listEntry = [self.listEntries objectAtIndex:indexPath.row - 1];
         assert([listEntry isKindOfClass:[NSDictionary class]]);
         
         // The first line of the cell is the item name.
@@ -492,6 +555,7 @@ static NSDateFormatter *    sDateFormatter;
         
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%s %@ %@", modeCStr, sizeStr, dateStr];
     }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }
