@@ -4,7 +4,7 @@ Read Me About SimpleFTPSample
 
 SimpleFTPSample shows how to do simple FTP transfers using the NSURLConnection and CFFTPStream APIs.
 
-SimpleFTPSample requires iPhone OS 3.0 or later, although the core networking code should also work on iPhone OS 2.x and Mac OS X.
+SimpleFTPSample requires iOS 4.0 or later, although the core networking code should also work on iOS 2.x, iOS 3.x, and Mac OS X.
 
 WARNING
 -------
@@ -82,7 +82,7 @@ You can use the Create Dir tab to test the directory creation code in a similar 
 
 Building the Sample
 -------------------
-The sample was built using Xcode 3.2 on Mac OS X 10.6 with iPhone SDK 3.0.  You should be able to just open the project and choose Build from the Build menu.  The resulting program should be compatible with all devices running iPhone OS 3.0 and later.  The bulk of my testing was done with an iPod touch (second generation) running iPhone OS 3.0.
+The sample was built using Xcode 3.2.3 on Mac OS X 10.6 with iOS SDK 4.0.  You should be able to just open the project and choose Build from the Build menu.  The resulting program should be compatible with all devices running iOS 3.2 and later.  The bulk of my testing was done with an iPod touch (second generation) running iOS 4.0.
 
 How It Works
 ------------
@@ -147,6 +147,8 @@ If you find any problems with this sample, please file a bug against it.
 
 <http://developer.apple.com/bugreporter/>
 
+1.2 Updated for iOS 4.0.
+1.1 Added code that demonstrates how to reinterpret the names in an FTP listing using a different encoding. Also fixed a couple of minor bugs in the ListControllers table handling.
 1.0 (Sep 2009) was the first shipping version.
 
 Share and Enjoy.

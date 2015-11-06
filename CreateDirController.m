@@ -5,7 +5,7 @@
 
     Written by: DTS
 
-    Copyright:  Copyright (c) 2009 Apple Inc. All Rights Reserved.
+    Copyright:  Copyright (c) 2010 Apple Inc. All Rights Reserved.
 
     Disclaimer: IMPORTANT: This Apple software is supplied to you by Apple Inc.
                 ("Apple") in consideration of your agreement to the following
@@ -146,6 +146,7 @@
         self.networkStream = (NSOutputStream *) ftpStream;
 
         if (self.usernameText.text.length != 0) {
+			#pragma unused (success) //Adding this to appease the static analyzer.
             success = [self.networkStream setProperty:self.usernameText.text forKey:(id)kCFStreamPropertyFTPUserName];
             assert(success);
             success = [self.networkStream setProperty:self.passwordText.text forKey:(id)kCFStreamPropertyFTPPassword];

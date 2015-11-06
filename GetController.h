@@ -5,7 +5,7 @@
 
     Written by: DTS
 
-    Copyright:  Copyright (c) 2009 Apple Inc. All Rights Reserved.
+    Copyright:  Copyright (c) 2010 Apple Inc. All Rights Reserved.
 
     Disclaimer: IMPORTANT: This Apple software is supplied to you by Apple Inc.
                 ("Apple") in consideration of your agreement to the following
@@ -53,7 +53,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GetController : UIViewController <UITextFieldDelegate>
+@interface GetController : UIViewController <UITextFieldDelegate, NSStreamDelegate>
 {
     UITextField *               _urlText;
     UIImageView *               _imageView;

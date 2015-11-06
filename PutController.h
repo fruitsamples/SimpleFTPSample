@@ -5,7 +5,7 @@
 
     Written by: DTS
 
-    Copyright:  Copyright (c) 2009 Apple Inc. All Rights Reserved.
+    Copyright:  Copyright (c) 2010 Apple Inc. All Rights Reserved.
 
     Disclaimer: IMPORTANT: This Apple software is supplied to you by Apple Inc.
                 ("Apple") in consideration of your agreement to the following
@@ -57,7 +57,7 @@ enum {
     kSendBufferSize = 32768
 };
 
-@interface PutController : UIViewController <UITextFieldDelegate>
+@interface PutController : UIViewController <UITextFieldDelegate, NSStreamDelegate>
 {
     UITextField *               _urlText;
     UITextField *               _usernameText;

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02084CB911E537B000199A4D /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 02084CB211E537B000199A4D /* Icon-72.png */; };
+		02084CBA11E537B000199A4D /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 02084CB311E537B000199A4D /* Icon-Small-50.png */; };
+		02084CBB11E537B000199A4D /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 02084CB411E537B000199A4D /* Icon-Small.png */; };
+		02084CBC11E537B000199A4D /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02084CB511E537B000199A4D /* Icon-Small@2x.png */; };
+		02084CBD11E537B000199A4D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 02084CB611E537B000199A4D /* Icon.png */; };
+		02084CBE11E537B000199A4D /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 02084CB711E537B000199A4D /* Icon@2x.png */; };
+		02084CEB11E53A8700199A4D /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 02084CEA11E53A8700199A4D /* iTunesArtwork */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		E46C8C300FF904C400D616AF /* PutController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46C8C2D0FF904C400D616AF /* PutController.m */; };
@@ -31,6 +38,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02084CB211E537B000199A4D /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		02084CB311E537B000199A4D /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		02084CB411E537B000199A4D /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		02084CB511E537B000199A4D /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		02084CB611E537B000199A4D /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		02084CB711E537B000199A4D /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		02084CEA11E53A8700199A4D /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* FTPSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FTPSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -77,6 +91,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02084CB111E537B000199A4D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				02084CB211E537B000199A4D /* Icon-72.png */,
+				02084CB311E537B000199A4D /* Icon-Small-50.png */,
+				02084CB411E537B000199A4D /* Icon-Small.png */,
+				02084CB511E537B000199A4D /* Icon-Small@2x.png */,
+				02084CB611E537B000199A4D /* Icon.png */,
+				02084CB711E537B000199A4D /* Icon@2x.png */,
+				02084CEA11E53A8700199A4D /* iTunesArtwork */,
+			);
+			name = Images;
+			path = Resources/Images;
+			sourceTree = "<group>";
+		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +149,7 @@
 		E4C278380FD6A51A000CE8F0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				02084CB111E537B000199A4D /* Images */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				E4C278340FD6A518000CE8F0 /* MainWindow.xib */,
 				E4B2552810420C6700C0D7D1 /* InitialDefaults.plist */,
@@ -199,6 +229,13 @@
 				E4B252F41041AC6500C0D7D1 /* list.png in Resources */,
 				E4B252FA1041B02700C0D7D1 /* mkdir.png in Resources */,
 				E4B2552910420C6700C0D7D1 /* InitialDefaults.plist in Resources */,
+				02084CB911E537B000199A4D /* Icon-72.png in Resources */,
+				02084CBA11E537B000199A4D /* Icon-Small-50.png in Resources */,
+				02084CBB11E537B000199A4D /* Icon-Small.png in Resources */,
+				02084CBC11E537B000199A4D /* Icon-Small@2x.png in Resources */,
+				02084CBD11E537B000199A4D /* Icon.png in Resources */,
+				02084CBE11E537B000199A4D /* Icon@2x.png in Resources */,
+				02084CEB11E53A8700199A4D /* iTunesArtwork in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,9 +297,10 @@
 				GCC_WARN_UNUSED_PARAMETER = YES;
 				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphoneos4.0;
 				WARNING_CFLAGS = (
 					"-Wall",
 					"-Wextra",
@@ -296,9 +334,10 @@
 				GCC_WARN_UNUSED_PARAMETER = YES;
 				GCC_WARN_UNUSED_VALUE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphoneos4.0;
 				WARNING_CFLAGS = (
 					"-Wall",
 					"-Wextra",
